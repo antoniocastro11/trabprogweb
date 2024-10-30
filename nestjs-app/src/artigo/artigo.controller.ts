@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Patch, Param } from '@nestjs/common';
 import { InstituicaoService } from './artigo.service';
-import { CreateInstituicaoDto } from './dto/create-instituicao.dto';
+import { CreateInstituicaoDto } from './dto/create-artigo.dto';
 import { UpdateInstituicaoDto } from './dto/update-artigo.dto';
 import { ApiTags } from '@nestjs/swagger';
 

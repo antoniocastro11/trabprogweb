@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { InstituicaoModule } from './instituicao/artigo.module';
+import { InstituicaoModule } from './artigo/artigo.module';
 
 @Module({
   imports: [InstituicaoModule],
