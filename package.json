@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@angular/material": "^18.2.10",
+    "@angular/router": "^18.2.9",
+    "axios": "^1.7.7",
+    "sequelize-typescript": "^2.1.6"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "@types/jest": "^29.5.14"
+  }
+}
