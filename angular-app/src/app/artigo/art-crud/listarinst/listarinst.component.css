@@ -1,0 +1,24 @@
+.disabled {
+    background-color: #e5e5e5;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+th{
+    text-align: left;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
