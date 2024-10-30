@@ -34,12 +34,12 @@ Letícia Batista Rocha:
 As técnologias utilizadas foram:
 
 - Angular Material (v16), para o desenvolvimento do front-end
-- NestJS
+- NestJS para desenvolvimento do backend
 
 ## Artefatos produzidos durante o desenvolvimento do trabalho:
 
-- [Protótipo]()
+- [Protótipo](https://www.figma.com/design/cZ0WSfkgVszEiCFZp66lek/BOOK.COM---ProgWeb?node-id=19-40&node-type=frame)
 
-- [Documento de Requisitos]()
+- [Documento de Requisitos](https://docs.google.com/document/d/12opJNaTAXk7Af83H-sdsWfqw2tbaFyhN/edit?usp=sharing&ouid=109493456912774970127&rtpof=true&sd=true)
 
 - [Apresentação Final]()
