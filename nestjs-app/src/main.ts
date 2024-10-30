@@ -11,7 +11,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()  
     .setTitle('Nest app')
-    .setDescription('The API to LEDES Challenge')
+    .setDescription('trabalho de programação para web')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);

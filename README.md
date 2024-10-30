@@ -17,7 +17,7 @@ Maria Eduarda Moretto de Lima:
 Nicolas Miranda Bento:
 
 - [Linkedin]()
-- [Github]()
+- [Github](https://github.com/NicolasMirB)
 
 João Pedro da Cruz:
 
@@ -31,7 +31,10 @@ Letícia Batista Rocha:
 
 ## Sobre o desenvolvimento:
 
-As técnologias utilizadas foram
+As técnologias utilizadas foram:
+
+- Angular Material (v16), para o desenvolvimento do front-end
+- NestJS
 
 ## Artefatos produzidos durante o desenvolvimento do trabalho:
 
