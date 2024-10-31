@@ -11,7 +11,7 @@ export const databaseProviders = [
         port: 3306,
         username: 'root',
         password: 'password',
-        database: 'nest',
+        database: 'db',
       });
       sequelize.addModels([Instituicao]);
       await sequelize.sync();
