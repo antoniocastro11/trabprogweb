@@ -6,8 +6,8 @@ import { MatFormField } from '@angular/material/form-field';
 import { CEPService } from '../cep.service';
 import { debounceTime } from 'rxjs';
 import { PaisService } from '../pais.service';
-import { InstituicaoService } from 'src/app/artigo/instituicao.service';
-import { Action } from '../../listarinst/listarinst.component';
+import { ArtigoService } from 'src/app/artigo/artigo.service';
+import { Action } from '../../listarinst/listarart.component';
 
 interface Pais {
     name: {
@@ -25,8 +25,8 @@ interface Pais {
 })
 
 export class AddEditComponent implements OnInit {
-    instForm1!: FormGroup;
-    instForm2!: FormGroup;
+    form1!: FormGroup;
+    form2!: FormGroup;
     paises: Pais[] = [];
     private action!: Action;
 
@@ -36,16 +36,16 @@ export class AddEditComponent implements OnInit {
         private paisService: PaisService,
         private activatedRoute: ActivatedRoute,
         private router: Router,
-        private instService: InstituicaoService
+        private instService: ArtigoService
     ) {
-        this.instForm1 = this.formBuilder.group({
+        this.form1 = this.formBuilder.group({
             id: [null],
             nome: ['', [Validators.required]],
             sigla: ['', [Validators.required]],
             cnpj: ['', [Validators.required]],
         })
 
-        this.instForm2 = this.formBuilder.group({
+        this.form2 = this.formBuilder.group({
             pais: ['', [Validators.required]],
             cep: ['', [Validators.required]],
             logradouro: ['', [Validators.required]],
@@ -63,13 +63,13 @@ export class AddEditComponent implements OnInit {
         this.activatedRoute.queryParams.subscribe(params => {
             if (params['id']) {
                 this.instService.getById(params['id']).subscribe(data => {
-                    this.instForm1.patchValue(data);
-                    this.instForm2.patchValue(data);
+                    this.form1.patchValue(data);
+                    this.form2.patchValue(data);
                 })
             }
             if (params['action'] && params['action'] == Action.VIEW) {
-                this.instForm1.disable();
-                this.instForm2.disable();
+                this.form1.disable();
+                this.form2.disable();
             }
             if (params['action'] && params['action'] == Action.EDIT) {
                 this.action = params['action'];
@@ -78,20 +78,20 @@ export class AddEditComponent implements OnInit {
     }
 
     async listenCepControl() {
-        this.instForm2.get('cep')?.valueChanges.pipe(debounceTime(750)).subscribe(async (value) => {
+        this.form2.get('cep')?.valueChanges.pipe(debounceTime(750)).subscribe(async (value) => {
             try {
                 const data = await this.cepService.getCep(value)
-                this.instForm2.patchValue(data, {emitEvent: false, onlySelf: true})
-                this.instForm2.get('logradouro')?.disable()
-                this.instForm2.get('localidade')?.disable()
-                this.instForm2.get('uf')?.disable()
-                this.instForm2.get('bairro')?.disable()
+                this.form2.patchValue(data, {emitEvent: false, onlySelf: true})
+                this.form2.get('logradouro')?.disable()
+                this.form2.get('localidade')?.disable()
+                this.form2.get('uf')?.disable()
+                this.form2.get('bairro')?.disable()
 
             } catch (error) {
-                this.instForm2.get('logradouro')?.enable()
-                this.instForm2.get('localidade')?.enable()
-                this.instForm2.get('uf')?.enable()
-                this.instForm2.get('bairro')?.enable()
+                this.form2.get('logradouro')?.enable()
+                this.form2.get('localidade')?.enable()
+                this.form2.get('uf')?.enable()
+                this.form2.get('bairro')?.enable()
             }
 
         })
@@ -104,16 +104,16 @@ export class AddEditComponent implements OnInit {
     }
 
     create() {
-        this.instForm1.enable()
-        this.instForm2.enable()
-        const data = { ...this.instForm1.value, ...this.instForm2.value, status: true };
+        this.form1.enable()
+        this.form2.enable()
+        const data = { ...this.form1.value, ...this.form2.value, status: true };
         this.instService.create(data).subscribe(_ => {
             this.back();
         });
     }
 
     update() {
-        const data = { ...this.instForm1.value, ...this.instForm2.value };
+        const data = { ...this.form1.value, ...this.form2.value };
         
         if (!data.id) return;
         this.instService.update(data.id, data).subscribe(_ => {
@@ -130,6 +130,6 @@ export class AddEditComponent implements OnInit {
     }
 
     back() {
-        this.router.navigate(['instituicao']);
+        this.router.navigate(['artigo']);
     }
 }

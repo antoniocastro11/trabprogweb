@@ -1,38 +1,38 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { CreateInstituicaoDto } from './dto/create-artigo.dto';
-import { UpdateInstituicaoDto } from './dto/update-artigo.dto';
-import { Instituicao } from './entities/artigo.entity';
+import { CreateArtigoDto } from './dto/create-artigo.dto';
+import { UpdateArtigoDto } from './dto/update-artigo.dto';
+import { Artigo } from './entities/artigo.entity';
 
 @Injectable()
-export class InstituicaoService {
+export class ArtigoService {
   constructor(
-    @Inject('INSTITUICAO_REPOSITORY')
-    private instituicaoRepository: typeof Instituicao,
+    @Inject('ARTIGO_REPOSITORY')
+    private artigoRepository: typeof Artigo,
   ) {}
 
-  create(createInstituicaoDto: CreateInstituicaoDto) {
-    return this.instituicaoRepository.create(createInstituicaoDto);
+  create(CreateArtigoDto: CreateArtigoDto) {
+    return this.artigoRepository.create(CreateArtigoDto);
   }
 
   findAll() {
-    return this.instituicaoRepository.findAll<Instituicao>();
+    return this.artigoRepository.findAll<Artigo>();
   }
 
   findOne(id: number) {
-    return this.instituicaoRepository.findByPk(id);
+    return this.artigoRepository.findByPk(id);
   }
 
-  update(id: number, updateInstituicaoDto: UpdateInstituicaoDto) {
-    return this.instituicaoRepository.update(
+  update(id: number, UpdateArtigoDto: UpdateArtigoDto) {
+    return this.artigoRepository.update(
       {
-        ...updateInstituicaoDto,
+        ...UpdateArtigoDto,
       },
       { where: { id } },
     );
   }
 
   activate(id: number) {
-    return this.instituicaoRepository.update(
+    return this.artigoRepository.update(
       {
         status: true,
       },
@@ -42,7 +42,7 @@ export class InstituicaoService {
     );
   }
   deactivate(id: number) {
-    return this.instituicaoRepository.update(
+    return this.artigoRepository.update(
       {
         status: false,
       },

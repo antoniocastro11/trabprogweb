@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { InstituicaoService } from './artigo.service';
-import { InstituicaoController } from './artigo.controller';
-import { instituicaoProviders } from './artigo.provider';
+import { ArtigoService } from './artigo.service';
+import { ArtigoController } from './artigo.controller';
+import { artigoProviders } from './artigo.provider';
 import { DatabaseModule } from 'src/databse/database.module';
 
 @Module({
   imports: [DatabaseModule],
-  controllers: [InstituicaoController],
-  providers: [InstituicaoService, ...instituicaoProviders],
+  controllers: [ArtigoController],
+  providers: [ArtigoService, ...artigoProviders],
 })
-export class InstituicaoModule {}
+export class ArtigoModule {}

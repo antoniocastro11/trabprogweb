@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { InstListarRoutingModule } from './inst-listar-routing.module';
-import { ListarinstComponent } from './listarinst/listarinst.component';
+import { InstListarRoutingModule } from './art-listar-routing.module';
+import { ListarartComponent } from './listarinst/listarart.component';
 
 import {MatTableModule} from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    ListarinstComponent
+    ListarartComponent
   ],
   imports: [
     CommonModule,
@@ -25,4 +25,4 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ]
 })
-export class InstListarModule { }
+export class ArtListarModule { }

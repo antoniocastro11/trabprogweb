@@ -1,8 +1,8 @@
-import { Instituicao } from './entities/artigo.entity';
+import { Artigo } from './entities/artigo.entity';
 
-export const instituicaoProviders = [
+export const artigoProviders = [
   {
-    provide: 'INSTITUICAO_REPOSITORY',
-    useValue: Instituicao,
+    provide: 'ARTIGO_REPOSITORY',
+    useValue: Artigo,
   },
 ];

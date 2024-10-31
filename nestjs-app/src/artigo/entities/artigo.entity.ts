@@ -5,12 +5,12 @@ import {
   AutoIncrement,
   PrimaryKey,
 } from 'sequelize-typescript';
-import { InstituicaoInterface } from '../interfaces/instituicao.interface';
+import { ArtigoInterface } from '../interfaces/artigo.interface';
 
 @Table
-export class Instituicao
-  extends Model<InstituicaoInterface>
-  implements InstituicaoInterface
+export class Artigo
+  extends Model<ArtigoInterface>
+  implements ArtigoInterface
 {
   @PrimaryKey
   @AutoIncrement

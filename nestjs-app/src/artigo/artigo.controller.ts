@@ -1,44 +1,44 @@
 import { Controller, Get, Post, Body, Patch, Param } from '@nestjs/common';
-import { InstituicaoService } from './artigo.service';
-import { CreateInstituicaoDto } from './dto/create-artigo.dto';
-import { UpdateInstituicaoDto } from './dto/update-artigo.dto';
+import { ArtigoService } from './artigo.service';
+import { CreateArtigoDto } from './dto/create-artigo.dto';
+import { UpdateArtigoDto } from './dto/update-artigo.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Instituicao')
-@Controller('instituicao')
-export class InstituicaoController {
-  constructor(private readonly instituicaoService: InstituicaoService) {}
+@ApiTags('Artigo')
+@Controller('artigo')
+export class ArtigoController {
+  constructor(private readonly artigoservice: ArtigoService) {}
 
   @Post()
-  create(@Body() createInstituicaoDto: CreateInstituicaoDto) {
-    return this.instituicaoService.create(createInstituicaoDto);
+  create(@Body() CreateArtigoDto: CreateArtigoDto) {
+    return this.artigoservice.create(CreateArtigoDto);
   }
 
   @Get()
   findAll() {
-    return this.instituicaoService.findAll();
+    return this.artigoservice.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.instituicaoService.findOne(+id);
+    return this.artigoservice.findOne(+id);
   }
 
   @Patch(':id')
   update(
     @Param('id') id: string,
-    @Body() updateInstituicaoDto: UpdateInstituicaoDto,
+    @Body() UpdateArtigoDto: UpdateArtigoDto,
   ) {
-    return this.instituicaoService.update(+id, updateInstituicaoDto);
+    return this.artigoservice.update(+id, UpdateArtigoDto);
   }
 
   @Patch('activate/:id')
   activate(@Param('id') id: string) {
-    return this.instituicaoService.activate(+id);
+    return this.artigoservice.activate(+id);
   }
 
   @Patch('deactivate/:id')
   deactivate(@Param('id') id: string) {
-    return this.instituicaoService.deactivate(+id);
+    return this.artigoservice.deactivate(+id);
   }
 }

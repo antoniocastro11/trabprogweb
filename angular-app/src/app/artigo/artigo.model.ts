@@ -1,4 +1,4 @@
-export interface Instituicao {
+export interface Artigo {
     id: number,
     nome: string;
     sigla: string;
