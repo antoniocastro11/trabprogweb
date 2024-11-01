@@ -3,74 +3,52 @@ import { ArtigoInterface } from '../interfaces/artigo.interface';
 
 export class CreateArtigoDto implements Omit<ArtigoInterface, 'id'> {
   @ApiProperty({
-    description: 'nome da artigo.',
-    example: 'Universidade Federal de Mato Grosso do sul',
+    description: 'nome do artigo.',
+    example: 'La ele da silva',
   })
-  nome: string;
+  titulo_artigo: string;
 
   @ApiProperty({
-    description: 'sigla da artigo.',
-    example: 'UFMS',
+    description: 'data de publicacao do artigo.',
+    example: '11/11/2011',
   })
-  sigla: string;
+  data_publicacao: Date;
 
   @ApiProperty({
-    description: 'pais da artigo.',
-    example: 'Brazil',
+    description: 'nome do autor do artigo.',
+    example: 'La ele da silva',
   })
-  pais: string;
+  nome_autor: string;
 
   @ApiProperty({
-    description: 'cnpj da artigo.',
-    example: '37.188.484/0001-54',
+    description: 'curso do autor do artigo.',
+    example: 'Engenharia de Software',
   })
-  cnpj: string;
+  curso_autor: string;
 
   @ApiProperty({
-    description: 'cep da artigo.',
-    example: '79006840',
+    description: 'resumo do artigo.',
+    example: 'Artigo sobre a importancia do uso de testes unitarios',
   })
-  cep: string;
+  resumo_artigo: string;
 
   @ApiProperty({
-    description: 'logradouro da artigo.',
-    example: 'Rua 1',
+    description: 'número de páginas do artigo.',
+    example: '20',
   })
-  logradouro: string;
+  numero_pg: number;
 
   @ApiProperty({
-    description: 'bairro da artigo.',
-    example: 'Bandeirantes',
+    description: 'idimoa do artigo.',
+    example: ' Portugues',
   })
-  bairro: string;
+  idioma: string;
+
 
   @ApiProperty({
-    description: 'numero da artigo.',
-    example: '1',
-  })
-  numero: number;
-
-  @ApiProperty({
-    description: 'localidade da artigo.',
-    example: 'Campo Grande',
-  })
-  localidade: string;
-
-  @ApiProperty({
-    description: 'complemento da artigo.',
-    example: 'em frente ao atacadao',
-  })
-  complemento: string;
-
-  @ApiProperty({
-    description: 'status da artigo.',
+    description: 'status do artigo.',
     example: true,
   })
   status: boolean;
 
-  @ApiProperty({
-    description: 'Estado da artigo.',
-    example: 'MS',
-  })
-  uf: string;
 }

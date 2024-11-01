@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtigoService } from '../../artigo.service';
-import { Observable } from 'rxjs';
 import { Artigo } from '../../artigo.model';
 import { Router } from '@angular/router';
 
@@ -18,7 +17,7 @@ export enum Action {
 export class ListarartComponent implements OnInit {
   public artigos: Artigo[] = [];
 
-  public displayedColumns = ['nome', 'sigla', 'pais', 'açoes']
+  public displayedColumns = ['titulo_artigo', 'nome_autor', 'data_publicacao', 'açoes']
 
   constructor(private artigoService: ArtigoService, private router: Router) { }
 
@@ -30,9 +29,6 @@ export class ListarartComponent implements OnInit {
 
   listarArtigos() {
     this.artigoService.listAll().subscribe((artigos: Artigo[]) => {
-
-      console.log(artigos)
-
       this.artigos = artigos;
     })
   }

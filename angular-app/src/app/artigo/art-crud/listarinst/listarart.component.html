@@ -8,37 +8,37 @@
   </div>
 
   <table mat-table [dataSource]="artigos" class="mat-elevation-z8">
-    <ng-container matColumnDef="nome">
-      <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <ng-container matColumnDef="titulo_artigo">
+      <th mat-header-cell *matHeaderCellDef>Titulo</th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         mat-cell
         *matCellDef="let element"
       >
-        {{ element.nome }}
+        {{ element.titulo_artigo }}
       </td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="sigla">
-      <th mat-header-cell *matHeaderCellDef>Sigla</th>
+    <ng-container matColumnDef="nome_autor">
+      <th mat-header-cell *matHeaderCellDef>Autor(es)</th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         mat-cell
         *matCellDef="let element"
       >
-        {{ element.sigla }}
+        {{ element.nome_autor }}
       </td>
     </ng-container>
 
     <!-- Weight Column -->
-    <ng-container matColumnDef="pais">
-      <th mat-header-cell *matHeaderCellDef>País</th>
+    <ng-container matColumnDef="data_publicacao">
+      <th mat-header-cell *matHeaderCellDef>Data de publicação</th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         *matCellDef="let element"
       >
-        {{ element.pais }}
+        {{ element.data_publicacao }}
       </td>
     </ng-container>
 

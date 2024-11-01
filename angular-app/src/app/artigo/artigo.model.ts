@@ -1,15 +1,11 @@
-export interface Artigo {
-    id: number,
-    nome: string;
-    sigla: string;
-    pais: string;
-    cnpj: string;
-    cep: string;
-    logradouro: string;
-    bairro: string;
-    localidade: string;
-    numero: number;
-    complemento?: string;
+export interface Artigo{
     status: boolean;
-    uf: string;
+    id: number;
+    titulo_artigo: string;  
+    data_publicacao: Date;
+    nome_autor: string;  
+    curso_autor: string;
+    resumo_artigo: string;
+    numero_pg: number;
+    idioma: string;
 }

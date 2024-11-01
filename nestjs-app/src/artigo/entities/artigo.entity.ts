@@ -9,7 +9,7 @@ import { ArtigoInterface } from '../interfaces/artigo.interface';
 
 @Table
 export class Artigo
-  extends Model<ArtigoInterface>
+  extends Model<Artigo>
   implements ArtigoInterface
 {
   @PrimaryKey
@@ -18,38 +18,26 @@ export class Artigo
   id: number;
 
   @Column
-  nome: string;
+  titulo_artigo: string;
 
+  @Column 
+  data_publicacao: Date;
+  
   @Column
-  sigla: string;
-
+  nome_autor: string;
+  
   @Column
-  pais: string;
-
+  curso_autor: string;
+  
   @Column
-  cnpj: string;
-
+  resumo_artigo: string;
+  
   @Column
-  cep: string;
-
+  numero_pg: number;
+  
   @Column
-  logradouro: string;
-
-  @Column
-  bairro: string;
-
-  @Column
-  numero: number;
-
-  @Column
-  localidade: string;
-
-  @Column({ allowNull: true })
-  complemento: string;
+  idioma: string;
 
   @Column
   status: boolean;
-
-  @Column
-  uf: string;
 }

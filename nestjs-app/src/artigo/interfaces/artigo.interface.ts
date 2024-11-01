@@ -1,27 +1,17 @@
 export interface ArtigoInterface {
   id: number;
 
-  nome: string;
+  titulo_artigo: string;
 
-  sigla: string;
+  data_publicacao: Date;
 
-  pais: string;
+  nome_autor: string;
 
-  cnpj: string;
+  curso_autor: string;
 
-  cep: string;
+  resumo_artigo: string;
 
-  logradouro: string;
+  numero_pg: number;
 
-  bairro: string;
-
-  numero: number;
-
-  localidade: string;
-
-  complemento: string;
-
-  status: boolean;
-
-  uf: string;
+  idioma: string;
 }

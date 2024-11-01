@@ -3,32 +3,60 @@
     <mat-stepper #stepper>
       <mat-step [stepControl]="form1" errorMessage="Name is required.">
         <form [formGroup]="form1">
-          <ng-template matStepLabel>Dados da Artigo</ng-template>
+          <ng-template matStepLabel>Dados do Artigo</ng-template>
           <mat-form-field class="mt-5">
-            <mat-label>Nome</mat-label>
+            <mat-label>Título do Artigo</mat-label>
             <input
               matInput
-              placeholder="Nome"
-              formControlName="nome"
+              placeholder="Título"
+              formControlName="titulo_artigo"
               required
             />
           </mat-form-field>
           <mat-form-field>
-            <mat-label>Sigla</mat-label>
+            <mat-label>Data de publicação</mat-label>
             <input
               matInput
-              placeholder="Sigla"
-              formControlName="sigla"
+              [matDatepicker]="picker"
+              formControlName="data_publicacao"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker
+              #picker
+              panelClass="datepicker-custom"
+            ></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Nome do Autor</mat-label>
+            <input
+              matInput
+              placeholder="Adonias da Silva Sauro"
+              formControlName="nome_autor"
               required
             />
           </mat-form-field>
           <mat-form-field>
-            <mat-label>CNPJ</mat-label>
+            <mat-label>Curso</mat-label>
             <input
               matInput
-              placeholder="CNPJ"
-              formControlName="cnpj"
+              placeholder="Odeio eng compers"
+              formControlName="curso_autor"
               required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Numero de paginas</mat-label>
+            <input matInput placeholder="2" formControlName="numero_pg" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Idioma</mat-label>
+            <input
+              matInput
+              placeholder="Mineireis uai"
+              formControlName="idioma"
             />
           </mat-form-field>
           <div>
@@ -36,75 +64,16 @@
           </div>
         </form>
       </mat-step>
-      <mat-step [stepControl]="form2" errorMessage="Address is required.">
+      <mat-step [stepControl]="form2" errorMessage="Resumo is required.">
         <form [formGroup]="form2">
-          <ng-template matStepLabel>Endereço</ng-template>
-          <mat-form-field class="mt-5">
-            <mat-label>CEP</mat-label>
-            <input matInput placeholder="CEP" formControlName="cep" required />
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Estado</mat-label>
+          <ng-template matStepLabel>Resumo do artigo</ng-template>
+          <mat-form-field class="mt-2">
+            <mat-label>Resumo do Artigo</mat-label>
             <input
               matInput
-              placeholder="Estado"
-              formControlName="uf"
+              placeholder=""
+              formControlName="resumo_artigo"
               required
-            />
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Logradouro</mat-label>
-            <input
-              matInput
-              placeholder="Logradouro"
-              formControlName="logradouro"
-              required
-            />
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Número</mat-label>
-            <input
-              matInput
-              placeholder="Número"
-              formControlName="numero"
-              required
-            />
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>País</mat-label>
-            <mat-select formControlName="pais">
-              <mat-option
-                *ngFor="let pais of paises"
-                value="{{ pais.name.common }}"
-                >{{ pais.name.common }}</mat-option
-              >
-            </mat-select>
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Municipio</mat-label>
-            <input
-              matInput
-              placeholder="Municipio"
-              formControlName="localidade"
-              required
-            />
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Bairro</mat-label>
-            <input
-              matInput
-              placeholder="Bairro"
-              formControlName="bairro"
-              required
-            />
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Complemento</mat-label>
-            <input
-              matInput
-              placeholder="Complemento"
-              formControlName="complemento"
             />
           </mat-form-field>
           <div>
