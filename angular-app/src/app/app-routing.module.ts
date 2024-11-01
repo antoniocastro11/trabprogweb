@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicialComponent } from './inicial/inicial.component';
-import { ArtListarModule } from './artigo/art-crud/art-listar.module';
 
 const routes: Routes = [
   {path:"", component: InicialComponent},

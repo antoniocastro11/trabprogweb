@@ -22,3 +22,9 @@ th{
     display: flex;
     justify-content: space-between;
 }
+
+.mat-elevation-z8 {
+    font-family: "Afacad", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

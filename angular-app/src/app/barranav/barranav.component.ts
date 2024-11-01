@@ -18,3 +18,12 @@ export class BarranavComponent {
       shareReplay()
     );
 }
+
+export class AppComponent {
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
+}
