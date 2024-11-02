@@ -2,8 +2,8 @@
   <div class="header">
     <h2>Artigo</h2>
     <button mat-button mat-list-item (click)="navigateToAdd()">
-      <mat-icon class="green">add</mat-icon>
-      <span class="green">ADICIONAR</span>
+      <mat-icon class="button">add</mat-icon>
+      <span class="button">ADICIONAR</span>
     </button>
   </div>
 
@@ -55,28 +55,28 @@
           (click)="navigateToView(element.id)"
           *ngIf="element.status"
         >
-          <mat-icon>visibility</mat-icon>
+          <mat-icon class="button">visibility</mat-icon>
         </button>
         <button
           mat-icon-button
           (click)="navigateToEdit(element.id)"
           *ngIf="element.status"
         >
-          <mat-icon class="blue">edit</mat-icon>
+          <mat-icon class="button">edit</mat-icon>
         </button>
         <button
           mat-icon-button
           (click)="deactivate(element)"
           *ngIf="element.status"
         >
-          <mat-icon class="red">block</mat-icon>
+          <mat-icon class="button">block</mat-icon>
         </button>
         <button
           mat-icon-button
           (click)="activate(element)"
           *ngIf="!element.status"
         >
-          <mat-icon class="green">check_box</mat-icon>
+          <mat-icon class="button">check_box</mat-icon>
         </button>
       </td>
     </ng-container>
