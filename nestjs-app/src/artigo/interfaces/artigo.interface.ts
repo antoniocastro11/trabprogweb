@@ -9,6 +9,8 @@ export interface ArtigoInterface {
 
   curso_autor: string;
 
+  orientador: string;
+
   resumo_artigo: string;
 
   numero_pg: number;

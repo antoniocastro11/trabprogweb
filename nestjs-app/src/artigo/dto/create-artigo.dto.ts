@@ -27,6 +27,12 @@ export class CreateArtigoDto implements Omit<ArtigoInterface, 'id'> {
   curso_autor: string;
 
   @ApiProperty({
+    description: 'orientador do artigo.', 
+    example: 'Joao da silva',
+  })
+  orientador: string;
+
+  @ApiProperty({
     description: 'resumo do artigo.',
     example: 'Artigo sobre a importancia do uso de testes unitarios',
   })

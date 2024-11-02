@@ -28,6 +28,7 @@ export class AddEditComponent implements OnInit {
             data_publicacao: ['', [Validators.required]],
             nome_autor: ['', [Validators.required]],
             curso_autor: ['', [Validators.required]],
+            orientador: ['', [Validators.required]],
             numero_pg: [''],
             idioma: [''],
         });
@@ -64,6 +65,7 @@ export class AddEditComponent implements OnInit {
         this.form1.enable();
         this.form2.enable();
         const data = { ...this.form1.value, ...this.form2.value, status: true };
+        console.log(data); 
         this.artService.create(data).subscribe(_ => {
             this.back();
         });
@@ -81,9 +83,11 @@ export class AddEditComponent implements OnInit {
     submit() {
         if (this.action === Action.EDIT) {
             this.update();
-            
-        } else {
+
+        } else if (this.action === Action.ADD) {
             this.create();
+        } else {
+            this.back();
         }
     }
 

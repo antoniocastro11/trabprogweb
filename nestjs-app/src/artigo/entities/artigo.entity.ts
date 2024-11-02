@@ -28,6 +28,9 @@ export class Artigo
   
   @Column
   curso_autor: string;
+
+  @Column
+  orientador: string;
   
   @Column
   resumo_artigo: string;
