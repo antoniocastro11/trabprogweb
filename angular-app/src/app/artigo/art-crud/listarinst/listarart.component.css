@@ -30,7 +30,15 @@ h2 {
 
 .component-container {
     background-color: #efe7fe;
+    font-family: "Afacad", serif ;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+mat-form-field {
     font-family: "Afacad", serif;
     font-optical-sizing: auto;
     font-style: normal;
+    width: 100%;
+    color : white;
 }

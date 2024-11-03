@@ -31,8 +31,20 @@
 }
 
 .afacad-menu {
-  font-family: "Afacad", serif;
+  font-family: "Afacad", serif !important;
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 20px;
+  text-decoration: none;  
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+  text-decoration: none;  
+  padding-inline-start: unset;
+  padding: 15px;
+  li {
+    padding: 7px 0;
+  }
 }

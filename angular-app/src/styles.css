@@ -12,4 +12,10 @@
     padding: 15px;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* { 
+    margin: 0; 
+    font-family: "Afacad", serif ;
+    font-optical-sizing: auto;
+    font-style: normal; 
+}
+

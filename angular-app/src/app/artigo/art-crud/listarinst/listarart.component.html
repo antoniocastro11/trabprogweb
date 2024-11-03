@@ -7,9 +7,19 @@
     </button>
   </div>
 
-  <table mat-table [dataSource]="artigos" class="mat-elevation-z8">
+
+ 
+  <mat-form-field [appearance]="'outline'">
+    <mat-label>Filtro</mat-label>
+    <input  matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Position Column -->
     <ng-container matColumnDef="titulo_artigo">
-      <th mat-header-cell *matHeaderCellDef>Titulo</th>
+      <th mat-header-cell *matHeaderCellDef> Título </th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         mat-cell
@@ -21,7 +31,7 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="nome_autor">
-      <th mat-header-cell *matHeaderCellDef>Autor(es)</th>
+      <th mat-header-cell *matHeaderCellDef> Autor(es) </th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         mat-cell
@@ -33,7 +43,7 @@
 
     <!-- Weight Column -->
     <ng-container matColumnDef="data_publicacao">
-      <th mat-header-cell *matHeaderCellDef>Data de publicação</th>
+      <th mat-header-cell *matHeaderCellDef> Data de publicação </th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         *matCellDef="let element"
@@ -44,7 +54,7 @@
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="açoes">
-      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         mat-cell
@@ -83,5 +93,8 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    
   </table>
 </div>
