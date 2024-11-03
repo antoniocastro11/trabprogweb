@@ -26,6 +26,11 @@ export class ListarartComponent implements OnInit {
     this.listarArtigos();
   }
 
+  formatarDataPublicacao(data_publicacao: string): string {
+    const data = new Date(data_publicacao);
+    return data.toLocaleDateString("pt-BR");
+  }
+  
 
   listarArtigos() {
     this.artigoService.listAll().subscribe((artigos: Artigo[]) => {

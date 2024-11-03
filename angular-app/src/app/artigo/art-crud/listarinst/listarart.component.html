@@ -38,7 +38,7 @@
         [ngClass]="!element.status ? 'disabled' : ''"
         *matCellDef="let element"
       >
-        {{ element.data_publicacao }}
+        {{ formatarDataPublicacao(element.data_publicacao) }}
       </td>
     </ng-container>
 
