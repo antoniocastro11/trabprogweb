@@ -15,7 +15,7 @@
   </mat-form-field>
 
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z7">
 
     <!-- Position Column -->
     <ng-container matColumnDef="titulo_artigo">
@@ -44,11 +44,12 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="data_publicacao">
       <th mat-header-cell *matHeaderCellDef> Data de publicação </th>
-      <td
+      <td class="dateColumn"
         [ngClass]="!element.status ? 'disabled' : ''"
         *matCellDef="let element"
       >
-        {{ formatarDataPublicacao(element.data_publicacao) }}
+        <!-- {{ formatarDataPublicacao(element.data_publicacao) }} -->
+        {{ element.data_publicacao | date: 'dd/MM/yyyy' }}
       </td>
     </ng-container>
 
