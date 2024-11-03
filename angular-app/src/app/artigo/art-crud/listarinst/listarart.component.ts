@@ -36,7 +36,9 @@ export class ListarartComponent implements OnInit {
   navigateToAdd() {
 
     this.router.navigate(['artigo/add'], {
-
+      queryParams: {
+        action: Action.ADD,
+      }
     });
   }
   navigateToView(id?: number) {

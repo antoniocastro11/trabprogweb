@@ -3,56 +3,56 @@ import { ArtigoInterface } from '../interfaces/artigo.interface';
 
 export class CreateArtigoDto implements Omit<ArtigoInterface, 'id'> {
   @ApiProperty({
-    description: 'nome do artigo.',
-    example: 'La ele da silva',
+    description: 'Título do artigo.',
+    example: 'A execução de testes unitarios na comunidade de desenvolvimento', 
   })
   titulo_artigo: string;
 
   @ApiProperty({
-    description: 'data de publicacao do artigo.',
+    description: 'Data de publicacao do artigo.',
     example: '11/11/2011',
   })
   data_publicacao: Date;
 
   @ApiProperty({
-    description: 'nome do autor do artigo.',
-    example: 'La ele da silva',
+    description: 'Nome do autor do artigo.',
+    example: 'Lucas Moreira',
   })
   nome_autor: string;
 
   @ApiProperty({
-    description: 'curso do autor do artigo.',
+    description: 'Curso do autor do artigo.',
     example: 'Engenharia de Software',
   })
   curso_autor: string;
 
   @ApiProperty({
-    description: 'orientador do artigo.', 
-    example: 'Joao da silva',
+    description: 'Orientador do artigo.', 
+    example: 'João da silva',
   })
   orientador: string;
 
   @ApiProperty({
-    description: 'resumo do artigo.',
+    description: 'Resumo do artigo.',
     example: 'Artigo sobre a importancia do uso de testes unitarios',
   })
   resumo_artigo: string;
 
   @ApiProperty({
-    description: 'número de páginas do artigo.',
+    description: 'Número de páginas do artigo.',
     example: '20',
   })
   numero_pg: number;
 
   @ApiProperty({
-    description: 'idimoa do artigo.',
-    example: ' Portugues',
+    description: 'Idioma do artigo.',
+    example: 'Português',
   })
   idioma: string;
 
 
   @ApiProperty({
-    description: 'status do artigo.',
+    description: 'Status do artigo.',
     example: true,
   })
   status: boolean;

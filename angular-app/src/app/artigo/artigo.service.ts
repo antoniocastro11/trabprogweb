@@ -8,7 +8,7 @@ import { Artigo } from './artigo.model';
 })
 export class ArtigoService {
 
-  private baseURL = 'http://localhost:3000';
+  private baseURL = 'http://localhost:3001';
   private endpoint = 'Artigo';
 
   constructor(private httpClient: HttpClient) { }

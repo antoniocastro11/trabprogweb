@@ -8,7 +8,7 @@
             <mat-label>Título do Artigo</mat-label>
             <input
               matInput
-              placeholder="Título"
+              placeholder="A importância do uso de padrões de projeto na Engenharia de Software"
               formControlName="titulo_artigo"
               required
             />
@@ -19,6 +19,7 @@
               matInput
               [matDatepicker]="picker"
               formControlName="data_publicacao"
+              placeholder="02/01/1921"
             />
             <mat-datepicker-toggle
               matIconSuffix
@@ -33,7 +34,7 @@
             <mat-label>Nome do Autor</mat-label>
             <input
               matInput
-              placeholder="Adonias da Silva Sauro"
+              placeholder="Gabriel de Oliveira"
               formControlName="nome_autor"
               required
             />
@@ -42,7 +43,7 @@
             <mat-label>Curso</mat-label>
             <input
               matInput
-              placeholder="Odeio eng compers"
+              placeholder="Engenharia de Software"
               formControlName="curso_autor"
               required
             />
@@ -51,22 +52,18 @@
             <mat-label>Orientador do Artigo</mat-label>
             <input
               matInput
-              placeholder="Joseph Climber"
+              placeholder="Jane Eleutério"
               formControlName="orientador"
               required
             />
           </mat-form-field>
           <mat-form-field>
             <mat-label>Numero de paginas</mat-label>
-            <input matInput placeholder="2" formControlName="numero_pg" />
+            <input matInput placeholder="23" formControlName="numero_pg" />
           </mat-form-field>
           <mat-form-field>
             <mat-label>Idioma</mat-label>
-            <input
-              matInput
-              placeholder="Mineireis uai"
-              formControlName="idioma"
-            />
+            <input matInput placeholder="Português" formControlName="idioma" />
           </mat-form-field>
           <div>
             <button mat-button matStepperNext>Próximo</button>
@@ -80,7 +77,8 @@
             <mat-label>Resumo do Artigo</mat-label>
             <input
               matInput
-              placeholder=""
+              placeholder="ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
               formControlName="resumo_artigo"
               required
             />
