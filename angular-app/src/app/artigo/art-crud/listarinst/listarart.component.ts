@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArtigoService } from '../../artigo.service';
 import { Artigo } from '../../artigo.model';
 import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
 
 export enum Action {
   VIEW = 'view',
@@ -16,7 +17,7 @@ export enum Action {
 })
 export class ListarartComponent implements OnInit {
   public artigos: Artigo[] = [];
-
+  dataSource!: MatTableDataSource<Artigo>;
   public displayedColumns = ['titulo_artigo', 'nome_autor', 'data_publicacao', 'açoes']
 
   constructor(private artigoService: ArtigoService, private router: Router) { }
@@ -26,15 +27,24 @@ export class ListarartComponent implements OnInit {
     this.listarArtigos();
   }
 
-  formatarDataPublicacao(data_publicacao: string): string {
-    const data = new Date(data_publicacao);
-    return data.toLocaleDateString("pt-BR");
+  formatarDataPublicacao(dataPublicacao: string): string {
+    const data = new Date(dataPublicacao);
+    return data.toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
   }
-  
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   listarArtigos() {
     this.artigoService.listAll().subscribe((artigos: Artigo[]) => {
       this.artigos = artigos;
+      this.dataSource = new MatTableDataSource(artigos);
     })
   }
 
