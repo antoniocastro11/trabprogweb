@@ -5,3 +5,37 @@
     text-decoration: none;
     color: inherit;
 }
+
+mat-card-header {
+    display: flex;
+    width: 100%;
+    min-height: fit-content;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 250px;
+    }
+}
+
+
+mat-card {
+    width: 60%;
+    color: black;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    h1 {
+        font-family: "Lalezar", system-ui;
+        font-style: normal;
+        text-align: center;
+        font-size: 45px;
+        margin-top: 20px;
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

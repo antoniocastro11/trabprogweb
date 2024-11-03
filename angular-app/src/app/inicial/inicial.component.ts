@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './inicial.component.html',
   styleUrls: ['./inicial.component.css']
 })
+
+
 export class InicialComponent {
 
 }
