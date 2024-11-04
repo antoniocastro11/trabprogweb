@@ -22,6 +22,10 @@ th{
     color: #603D9C;
 }
 
+.buttonAdd {
+    color: green;
+}
+
 h2 {
     color: black;
     font-family: "Afacad", serif;
@@ -46,5 +50,5 @@ mat-form-field {
 
 .dateColumn {
     width: 25%;
-    padding-left: 18px;
+    padding-left: px;
 }

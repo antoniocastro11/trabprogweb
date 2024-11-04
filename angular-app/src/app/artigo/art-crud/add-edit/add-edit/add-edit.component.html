@@ -6,56 +6,26 @@
           <ng-template matStepLabel>Dados do Artigo</ng-template>
           <mat-form-field class="mt-5">
             <mat-label>Título do Artigo</mat-label>
-            <input
-              matInput
-              placeholder="A importância do uso de padrões de projeto na Engenharia de Software"
-              formControlName="titulo_artigo"
-              required
-            />
+            <input matInput placeholder="A importância do uso de padrões de projeto na Engenharia de Software"
+              formControlName="titulo_artigo" required />
           </mat-form-field>
           <mat-form-field>
             <mat-label>Data de publicação</mat-label>
-            <input
-              matInput
-              [matDatepicker]="picker"
-              formControlName="data_publicacao"
-              placeholder="02/01/1921"
-            />
-            <mat-datepicker-toggle
-              matIconSuffix
-              [for]="picker"
-            ></mat-datepicker-toggle>
-            <mat-datepicker
-              #picker
-              panelClass="datepicker-custom"
-            ></mat-datepicker>
+            <input matInput [matDatepicker]="picker" formControlName="data_publicacao" placeholder="02/01/1921" />
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker panelClass="datepicker-custom"></mat-datepicker>
           </mat-form-field>
           <mat-form-field>
             <mat-label>Nome do Autor</mat-label>
-            <input
-              matInput
-              placeholder="Gabriel de Oliveira"
-              formControlName="nome_autor"
-              required
-            />
+            <input matInput placeholder="Gabriel de Oliveira" formControlName="nome_autor" required />
           </mat-form-field>
           <mat-form-field>
             <mat-label>Curso</mat-label>
-            <input
-              matInput
-              placeholder="Engenharia de Software"
-              formControlName="curso_autor"
-              required
-            />
+            <input matInput placeholder="Engenharia de Software" formControlName="curso_autor" required />
           </mat-form-field>
           <mat-form-field>
             <mat-label>Orientador do Artigo</mat-label>
-            <input
-              matInput
-              placeholder="Jane Eleutério"
-              formControlName="orientador"
-              required
-            />
+            <input matInput placeholder="Jane Eleutério" formControlName="orientador" required />
           </mat-form-field>
           <mat-form-field>
             <mat-label>Numero de paginas</mat-label>
@@ -71,23 +41,24 @@
         </form>
       </mat-step>
       <mat-step [stepControl]="form2" errorMessage="Resumo is required.">
-        <form [formGroup]="form2">
-          <ng-template matStepLabel>Resumo do artigo</ng-template>
-          <mat-form-field class="mt-2">
-            <mat-label>Resumo do Artigo</mat-label>
-            <input
-              matInput
-              placeholder="ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
-              formControlName="resumo_artigo"
-              required
-            />
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Anterior</button>
-            <button mat-button (click)="submit()">Finalizar</button>
-          </div>
-        </form>
+        <div class="proporcao">
+          <form [formGroup]="form2">
+            <ng-template matStepLabel>Resumo do artigo</ng-template>
+
+            <mat-form-field class="mt-2">
+              <mat-label>Resumo do Artigo</mat-label>
+              <textarea matInput
+                placeholder="ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+                formControlName="resumo_artigo" required cols="55" line="25">
+          </textarea>
+            </mat-form-field>
+
+            <div>
+              <button mat-button matStepperPrevious>Anterior</button>
+              <button mat-button (click)="submit()">Finalizar</button>
+            </div>
+          </form>
+        </div>
       </mat-step>
     </mat-stepper>
   </div>
