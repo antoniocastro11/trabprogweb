@@ -6,6 +6,7 @@ import {
   PrimaryKey,
 } from 'sequelize-typescript';
 import { ArtigoInterface } from '../interfaces/artigo.interface';
+import { DataTypes } from 'sequelize';
 
 @Table
 export class Artigo
@@ -32,7 +33,7 @@ export class Artigo
   @Column
   orientador: string;
   
-  @Column
+  @Column({ type: DataTypes.TEXT('long')})
   resumo_artigo: string;
   
   @Column
