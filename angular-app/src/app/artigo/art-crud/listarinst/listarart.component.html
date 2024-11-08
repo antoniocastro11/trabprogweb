@@ -1,25 +1,26 @@
 <div class="component-container">
   <div class="header">
-    <h2>Artigos Aprovados</h2>
+    <h2>Visualização do Aluno</h2>
     <button mat-button mat-list-item (click)="navigateToAdd()">
       <mat-icon class="buttonAdd">add</mat-icon>
       <span class="buttonAdd">ADICIONAR</span>
     </button>
   </div>
 
-
- 
   <mat-form-field [appearance]="'outline'">
     <mat-label>Filtro</mat-label>
-    <input  matInput (keyup)="applyFilter($event)" placeholder="Titulo/Autor/Palavras-Chave" #input>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Titulo/Autor/Palavras-Chave"
+      #input
+    />
   </mat-form-field>
 
-
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z7">
-
-    <!-- Position Column -->
+    <!-- titulo -->
     <ng-container matColumnDef="titulo_artigo">
-      <th mat-header-cell *matHeaderCellDef> Título </th>
+      <th mat-header-cell *matHeaderCellDef>Título</th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         mat-cell
@@ -29,9 +30,9 @@
       </td>
     </ng-container>
 
-    <!-- Name Column -->
+    <!-- nome autor -->
     <ng-container matColumnDef="nome_autor">
-      <th mat-header-cell *matHeaderCellDef> Autor(es) </th>
+      <th mat-header-cell *matHeaderCellDef>Autor(es)</th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         mat-cell
@@ -41,21 +42,21 @@
       </td>
     </ng-container>
 
-    <!-- Weight Column -->
+    <!-- data -->
     <ng-container matColumnDef="data_publicacao">
-      <th mat-header-cell *matHeaderCellDef> Data de publicação </th>
-      <td class="dateColumn"
+      <th mat-header-cell *matHeaderCellDef>Data de publicação</th>
+      <td
+        class="dateColumn"
         [ngClass]="!element.status ? 'disabled' : ''"
         *matCellDef="let element"
       >
-        <!-- {{ formatarDataPublicacao(element.data_publicacao) }} -->
-        {{ element.data_publicacao | date: 'dd/MM/yyyy' }}
+        {{ element.data_publicacao | date : "dd/MM/yyyy" }}
       </td>
     </ng-container>
 
-    <!-- Symbol Column -->
+    <!-- acoes -->
     <ng-container matColumnDef="açoes">
-      <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
       <td
         [ngClass]="!element.status ? 'disabled' : ''"
         mat-cell
@@ -94,8 +95,5 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
-    <!-- Row shown when there is no matching data. -->
-    
   </table>
 </div>
