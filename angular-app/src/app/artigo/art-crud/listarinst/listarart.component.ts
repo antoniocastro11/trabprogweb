@@ -39,6 +39,14 @@ export class ListarartComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filterPredicate = (data: Artigo, filter: string) => {
+      const dataStr = Object.keys(data).reduce((currentTerm: string, key: string) => {
+        return currentTerm + (data as { [key: string]: any })[key] + '◬';
+      }, '').toLowerCase();
+      const normalizedFilter = filter.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      const normalizedData = dataStr.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      return normalizedData.indexOf(normalizedFilter) !== -1;
+    };
   }
 
   listarArtigos() {
