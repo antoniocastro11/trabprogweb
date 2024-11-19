@@ -69,27 +69,6 @@
         >
           <mat-icon class="button">visibility</mat-icon>
         </button>
-        <button
-          mat-icon-button
-          (click)="navigateToEdit(element.id)"
-          *ngIf="element.status"
-        >
-          <mat-icon class="button">edit</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          (click)="deactivate(element)"
-          *ngIf="element.status"
-        >
-          <mat-icon class="button">block</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          (click)="activate(element)"
-          *ngIf="!element.status"
-        >
-          <mat-icon class="button">check_box</mat-icon>
-        </button>
       </td>
     </ng-container>
 
