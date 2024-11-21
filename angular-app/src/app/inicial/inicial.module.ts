@@ -5,7 +5,6 @@ import { InicialComponent } from './inicial.component';
 
 @NgModule({
   declarations: [InicialComponent],
-  imports: [MatButtonModule, MatCardModule],
-  providers: [],
+  imports: [MatButtonModule, MatCardModule]
 })
 export class InicialModule {}
