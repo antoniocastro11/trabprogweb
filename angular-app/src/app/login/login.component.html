@@ -1,20 +1,22 @@
 <div class="login">
-    <img mat-card-image
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo9rJzQCqUKCvZ31Xc_MAYCXR2zCsj0hJwtj2GdM3rW3GZZ1TV"
-        alt="Pilha de livros">
-    <h1>BOOK.COM</h1>
-    <p>Faça login em sua conta</p>
-    <form>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Senha" required>
-        <select id="tipo-cadastro">
-            <option>Tipo de Cadastro</option>
-            <option>Estudante</option>
-            <option>Professor (Orientador)</option>
-        </select>
-        <a href="#">Esqueceu a senha?</a>
-        <button type="submit">Entrar</button>
-        <div class="divider">ou</div>
-        <button class="register">Cadastre-se</button>
-    </form>
+  <img
+    mat-card-image
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo9rJzQCqUKCvZ31Xc_MAYCXR2zCsj0hJwtj2GdM3rW3GZZ1TV"
+    alt="Pilha de livros"
+  />
+  <h1>BOOK.COM</h1>
+  <p>Faça login em sua conta</p>
+  <form>
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Senha" required />
+    <select id="tipo-cadastro">
+      <option>Tipo de Cadastro</option>
+      <option>Estudante</option>
+      <option>Professor (Orientador)</option>
+    </select>
+    <a href="#">Esqueceu a senha?</a>
+    <button type="submit" (click)="redirectToHome()">Entrar</button>
+    <div class="divider">ou</div>
+    <button class="register">Cadastre-se</button>
+  </form>
 </div>
