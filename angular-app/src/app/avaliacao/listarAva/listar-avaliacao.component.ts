@@ -1,30 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtigoService } from '../../artigo.service';
-import { Artigo } from '../../artigo.model';
-import { Router } from '@angular/router';
+import { Artigo } from 'src/app/artigo/artigo.model';
+import { ArtigoService } from 'src/app/artigo/artigo.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 export enum Action {
-  VIEW = 'view',
-  ADD = 'add',
-  EDIT = 'edit'
+  ADD = 'ADD',
+  VIEW = 'VIEW',
+  EDIT = 'EDIT'
 }
 
 @Component({
-  selector: 'app-listarart',
-  templateUrl: './listarart.component.html',
-  styleUrls: ['./listarart.component.css']
+  selector: 'app-listar-avaliacao',
+  templateUrl: './listar-avaliacao.component.html',
+  styleUrls: ['./listar-avaliacao.component.css']
 })
-export class ListarartComponent implements OnInit {
+export class ListarAvaliacaoComponent implements OnInit {
+
   public artigos: Artigo[] = [];
-  dataSource!: MatTableDataSource<Artigo>;
+  dataSource!: MatTableDataSource<Artigo>;  
+
   public displayedColumns = ['titulo_artigo', 'nome_autor', 'data_publicacao', 'açoes']
 
   constructor(private artigoService: ArtigoService, private router: Router) { }
 
-
   ngOnInit(): void {
     this.listarArtigos();
+  }
+
+  listarArtigos() {
+    this.artigoService.listAll().subscribe((artigos: Artigo[]) => {
+      this.artigos = artigos;
+      this.dataSource = new MatTableDataSource(artigos);
+    })
   }
 
   applyFilter(event: Event) {
@@ -40,49 +48,44 @@ export class ListarartComponent implements OnInit {
     };
   }
 
-  listarArtigos() {
-    this.artigoService.listAll().subscribe((artigos: Artigo[]) => {
-    const artigosAtivos = artigos.filter(artigo => artigo.status);
-    this.dataSource = new MatTableDataSource(artigosAtivos);
-  })
-  }
-
   navigateToAdd() {
 
-    this.router.navigate(['artigo/add'], {
+    this.router.navigate(['avaliacao/add'], {
       queryParams: {
         action: Action.ADD,
       }
     });
   }
   navigateToView(id?: number) {
-
-    this.router.navigate(['artigo/add'], {
+  
+    this.router.navigate(['avaliacao/add'], {
       queryParams: {
         id: id,
         action: Action.VIEW,
-
+  
       }
     });
   }
   navigateToEdit(id?: number) {
-
-    this.router.navigate(['artigo/add'], {
+  
+    this.router.navigate(['avaliacao/add'], {
       queryParams: {
         id: id,
         action: Action.EDIT,
       }
     });
   }
-
+  
   deactivate(art: Artigo) {
     art.status = false;
     this.artigoService.deactivate(art.id).subscribe()
   }
-
+  
   activate(art: Artigo) {
     art.status = true;
     this.artigoService.activate(art.id).subscribe()
   }
+  
+  }
+  
 
-}

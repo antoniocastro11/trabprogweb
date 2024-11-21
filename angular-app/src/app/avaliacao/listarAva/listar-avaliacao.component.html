@@ -1,0 +1,99 @@
+<div class="component-container">
+  <div class="header">
+    <h2>Gerenciar Artigos</h2>
+    <button mat-button mat-list-item (click)="navigateToAdd()">
+      <mat-icon class="buttonAdd">add</mat-icon>
+      <span class="buttonAdd">ADICIONAR</span>
+    </button>
+  </div>
+
+  <mat-form-field [appearance]="'outline'">
+    <mat-label>Filtro</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Titulo/Autor/Palavras-Chave"
+      #input
+    />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z7">
+    <!-- titulo -->
+    <ng-container matColumnDef="titulo_artigo">
+      <th mat-header-cell *matHeaderCellDef>Título</th>
+      <td
+        [ngClass]="!element.status ? 'disabled' : ''"
+        mat-cell
+        *matCellDef="let element"
+      >
+        {{ element.titulo_artigo }}
+      </td>
+    </ng-container>
+
+    <!-- nome autor -->
+    <ng-container matColumnDef="nome_autor">
+      <th mat-header-cell *matHeaderCellDef>Autor(es)</th>
+      <td
+        [ngClass]="!element.status ? 'disabled' : ''"
+        mat-cell
+        *matCellDef="let element"
+      >
+        {{ element.nome_autor }}
+      </td>
+    </ng-container>
+
+    <!-- data -->
+    <ng-container matColumnDef="data_publicacao">
+      <th mat-header-cell *matHeaderCellDef>Data de publicação</th>
+      <td
+        class="dateColumn"
+        [ngClass]="!element.status ? 'disabled' : ''"
+        *matCellDef="let element"
+      >
+        {{ element.data_publicacao | date : "dd/MM/yyyy" }}
+      </td>
+    </ng-container>
+
+    <!-- acoes -->
+    <ng-container matColumnDef="açoes">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td
+        [ngClass]="!element.status ? 'disabled' : ''"
+        mat-cell
+        *matCellDef="let element"
+      >
+        <button
+          mat-icon-button
+          (click)="navigateToView(element.id)"
+          *ngIf="element.status"
+        >
+          <mat-icon class="button">visibility</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          (click)="navigateToEdit(element.id)"
+          *ngIf="element.status"
+        >
+          <mat-icon class="button">edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          (click)="deactivate(element)"
+          *ngIf="element.status"
+        >
+          <mat-icon class="button">block</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          (click)="activate(element)"
+          *ngIf="!element.status"
+        >
+          <mat-icon class="button">check_box</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -9,7 +9,11 @@ const routes: Routes = [
   },
   {
     path: "artigo",
-    loadChildren: () => import('./artigo/art-crud/art-listar.module').then(modulo => modulo.ArtListarModule)
+    loadChildren: () => import('./artigo/art-crud/art-listar.module').then(modulo => modulo.ArtListarModule),
+  },
+  {
+    path: "avaliacao",
+    loadChildren: () => import('./avaliacao/listar-avaliacao.module').then(modulo => modulo.ListarAvaliacaoModule)
   },
   {
     path: "login", 

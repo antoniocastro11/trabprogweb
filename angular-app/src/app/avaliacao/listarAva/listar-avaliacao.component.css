@@ -1,0 +1,54 @@
+.disabled {
+    background-color: #5838652d;
+}
+
+th{
+    text-align: left;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-elevation-z7 {
+    font-family: "Afacad", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    justify-content: space-between;
+}
+
+.button {
+    color: #603D9C;
+}
+
+.buttonAdd {
+    color: green;
+}
+
+h2 {
+    color: black;
+    font-family: "Afacad", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.component-container {
+    background-color: #efe7fe;
+    font-family: "Afacad", serif ;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+mat-form-field {
+    font-family: "Afacad", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 100%;
+    color : white;
+}
+
+.dateColumn {
+    width: 25%;
+    padding-left: px;
+}

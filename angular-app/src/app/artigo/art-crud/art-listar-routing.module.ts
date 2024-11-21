@@ -1,9 +1,6 @@
-import { ModuleWithComponentFactories, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarartComponent } from './listarinst/listarart.component';
-import { AddEditComponent } from './add-edit/add-edit/add-edit.component';
-import { ArtigoService } from '../artigo.service';
-
 const routes: Routes = [
   {
     path: "", component: ListarartComponent
