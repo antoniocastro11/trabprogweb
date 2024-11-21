@@ -6,16 +6,33 @@
   />
   <h1>BOOK.COM</h1>
   <p>Faça login em sua conta</p>
-  <form>
-    <input type="email" placeholder="Email" required />
-    <input type="password" placeholder="Senha" required />
-    <select id="tipo-cadastro">
-      <option>Tipo de Cadastro</option>
-      <option>Estudante</option>
-      <option>Professor (Orientador)</option>
+  <form (ngSubmit)="onSubmit()">
+    <input
+      type="email"
+      [(ngModel)]="formData.email"
+      name="email"
+      placeholder="Email"
+      required
+    />
+    <input
+      type="password"
+      [(ngModel)]="formData.senha"
+      name="senha"
+      placeholder="Senha"
+      required
+    />
+    <select
+      [(ngModel)]="formData.tipoCadastro"
+      name="tipoCadastro"
+      id="tipo-cadastro"
+      required
+    >
+      <option value="" disabled selected>Tipo de Cadastro</option>
+      <option value="Estudante">Estudante</option>
+      <option value="Professor">Professor (Orientador)</option>
     </select>
+    <button type="submit">Entrar</button>
     <a href="#">Esqueceu a senha?</a>
-    <button type="submit" (click)="redirectToHome()">Entrar</button>
     <div class="divider">ou</div>
     <button class="register">Cadastre-se</button>
   </form>
