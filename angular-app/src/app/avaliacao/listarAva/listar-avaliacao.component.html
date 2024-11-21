@@ -22,7 +22,7 @@
     <ng-container matColumnDef="titulo_artigo">
       <th mat-header-cell *matHeaderCellDef>Título</th>
       <td
-        [ngClass]="!element.status ? 'disabled' : ''"
+        [ngClass]="validateRepproved(element.status) ? 'disabled' : ''"
         mat-cell
         *matCellDef="let element"
       >
@@ -34,7 +34,7 @@
     <ng-container matColumnDef="nome_autor">
       <th mat-header-cell *matHeaderCellDef>Autor(es)</th>
       <td
-        [ngClass]="!element.status ? 'disabled' : ''"
+        [ngClass]="validateRepproved(element.status) ? 'disabled' : ''"
         mat-cell
         *matCellDef="let element"
       >
@@ -47,7 +47,7 @@
       <th mat-header-cell *matHeaderCellDef>Data de publicação</th>
       <td
         class="dateColumn"
-        [ngClass]="!element.status ? 'disabled' : ''"
+        [ngClass]="validateRepproved(element.status) ? 'disabled' : ''"
         *matCellDef="let element"
       >
         {{ element.data_publicacao | date : "dd/MM/yyyy" }}
@@ -58,35 +58,35 @@
     <ng-container matColumnDef="açoes">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
       <td
-        [ngClass]="!element.status ? 'disabled' : ''"
+        [ngClass]="validateRepproved(element.status) ? 'disabled' : ''"
         mat-cell
         *matCellDef="let element"
       >
         <button
           mat-icon-button
           (click)="navigateToView(element.id)"
-          *ngIf="element.status"
+          *ngIf="validateApprovedOrAnalysis(element.status)"
         >
           <mat-icon class="button">visibility</mat-icon>
         </button>
         <button
           mat-icon-button
           (click)="navigateToEdit(element.id)"
-          *ngIf="element.status"
+          *ngIf="validateApprovedOrAnalysis(element.status)"
         >
           <mat-icon class="button">edit</mat-icon>
         </button>
         <button
           mat-icon-button
           (click)="deactivate(element)"
-          *ngIf="element.status"
+          *ngIf="validateApprovedOrAnalysis(element.status)"
         >
           <mat-icon class="button">block</mat-icon>
         </button>
         <button
           mat-icon-button
           (click)="activate(element)"
-          *ngIf="!element.status"
+          *ngIf="validateRepproved(element.status)"
         >
           <mat-icon class="button">check_box</mat-icon>
         </button>
