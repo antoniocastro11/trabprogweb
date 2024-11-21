@@ -16,4 +16,12 @@ export interface ArtigoInterface {
   numero_pg: number;
 
   idioma: string;
+
+  status: StatusArtigo;
+}
+
+export enum StatusArtigo{
+  EM_ANALISE = 'Em análise',
+  APROVADO = 'Aprovado',
+  REPROVADO = 'Reprovado'
 }

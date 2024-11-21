@@ -1,5 +1,5 @@
 export interface Artigo{
-    status: boolean;
+    status: StatusArtigo;
     id: number;
     titulo_artigo: string;  
     data_publicacao: Date;
@@ -9,4 +9,10 @@ export interface Artigo{
     numero_pg: number;
     idioma: string;
     resumo_artigo: string;
+}
+
+export enum StatusArtigo{
+    EM_ANALISE = 'Em análise',
+    APROVADO = 'Aprovado',
+    REPROVADO = 'Reprovado'
 }

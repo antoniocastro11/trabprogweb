@@ -7,12 +7,10 @@ import {
 } from 'sequelize-typescript';
 import { ArtigoInterface } from '../interfaces/artigo.interface';
 import { DataTypes } from 'sequelize';
+import { StatusArtigo } from '../interfaces/artigo.interface';
 
 @Table
-export class Artigo
-  extends Model<Artigo>
-  implements ArtigoInterface
-{
+export class Artigo extends Model<Artigo> implements ArtigoInterface {
   @PrimaryKey
   @AutoIncrement
   @Column
@@ -21,27 +19,34 @@ export class Artigo
   @Column
   titulo_artigo: string;
 
-  @Column 
+  @Column
   data_publicacao: Date;
-  
+
   @Column
   nome_autor: string;
-  
+
   @Column
   curso_autor: string;
 
   @Column
   orientador: string;
-  
-  @Column({ type: DataTypes.TEXT('long')})
+
+  @Column({ type: DataTypes.TEXT('long') })
   resumo_artigo: string;
-  
+
   @Column
   numero_pg: number;
-  
+
   @Column
   idioma: string;
 
-  @Column
-  status: boolean;
+  @Column({
+    type: DataTypes.ENUM,
+    values: [
+      StatusArtigo.EM_ANALISE,
+      StatusArtigo.APROVADO,
+      StatusArtigo.REPROVADO,
+    ],
+  })
+  status: StatusArtigo;
 }

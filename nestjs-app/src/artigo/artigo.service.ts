@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CreateArtigoDto } from './dto/create-artigo.dto';
 import { UpdateArtigoDto } from './dto/update-artigo.dto';
 import { Artigo } from './entities/artigo.entity';
+import { StatusArtigo } from './interfaces/artigo.interface';
 
 @Injectable()
 export class ArtigoService {
@@ -34,7 +35,7 @@ export class ArtigoService {
   activate(id: number) {
     return this.artigoRepository.update(
       {
-        status: true,
+        status: StatusArtigo.APROVADO,
       },
       {
         where: { id },
@@ -44,7 +45,7 @@ export class ArtigoService {
   deactivate(id: number) {
     return this.artigoRepository.update(
       {
-        status: false,
+        status: StatusArtigo.REPROVADO,
       },
       {
         where: { id },

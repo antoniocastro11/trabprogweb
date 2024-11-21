@@ -1,10 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ArtigoInterface } from '../interfaces/artigo.interface';
+import { ArtigoInterface, StatusArtigo } from '../interfaces/artigo.interface';
 
 export class CreateArtigoDto implements Omit<ArtigoInterface, 'id'> {
   @ApiProperty({
     description: 'Título do artigo.',
-    example: 'A execução de testes unitarios na comunidade de desenvolvimento', 
+    example: 'A execução de testes unitarios na comunidade de desenvolvimento',
   })
   titulo_artigo: string;
 
@@ -27,7 +27,7 @@ export class CreateArtigoDto implements Omit<ArtigoInterface, 'id'> {
   curso_autor: string;
 
   @ApiProperty({
-    description: 'Orientador do artigo.', 
+    description: 'Orientador do artigo.',
     example: 'João da silva',
   })
   orientador: string;
@@ -50,11 +50,9 @@ export class CreateArtigoDto implements Omit<ArtigoInterface, 'id'> {
   })
   idioma: string;
 
-
   @ApiProperty({
     description: 'Status do artigo.',
-    example: true,
+    example: StatusArtigo.EM_ANALISE,
   })
-  status: boolean;
-
+  status: StatusArtigo;
 }
