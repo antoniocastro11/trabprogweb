@@ -1,2 +1,2 @@
 <app-barranav *ngIf="shouldShowBarranav()"></app-barranav>
-<router-outlet></router-outlet>
+<router-outlet *ngIf="!shouldShowBarranav()"></router-outlet>
