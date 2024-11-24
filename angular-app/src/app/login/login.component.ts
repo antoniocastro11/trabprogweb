@@ -20,6 +20,15 @@ export class LoginComponent {
     );
   }
 
+  senhaValida() {
+    return (
+      this.formData.senha.length >= 6 &&
+      /\d/.test(this.formData.senha) &&
+      /[A-Z]/.test(this.formData.senha) &&
+      /[a-z]/.test(this.formData.senha)
+    );
+  }
+
   constructor(private router: Router) {}
 
   onSubmit() {
@@ -28,7 +37,8 @@ export class LoginComponent {
       this.formData.email &&
       this.formData.senha &&
       this.formData.tipoCadastro &&
-      this.emailValido()
+      this.emailValido() &&
+      this.senhaValida()
     ) {
       this.router.navigate(['/inicial']);
     } else {

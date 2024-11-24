@@ -4,6 +4,11 @@
   background-color: #efe7fe;
 }
 
+.icon {
+  color: #603D9C;
+  height: 10%;
+}
+
 .sidenav {
   width: 200px;
   background-color: white;

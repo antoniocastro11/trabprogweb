@@ -13,6 +13,8 @@
 
     <nav>
       <ul>
+
+
         <li>
           <a class="afacad-menu" mat-list-item [routerLink]="['inicial']">Inicial</a>
         </li>
@@ -26,6 +28,17 @@
             >Avaliar Artigos</a
           >
         </li>
+        <li>
+          <a
+            class="afacad-menu"
+            mat-list-item
+            [routerLink]="['']"
+            (click)="logout()"
+          >
+            <mat-icon class="icon" aria-hidden="true">logout</mat-icon>
+          </a>
+        </li>        
+        
       </ul>
     </nav>
   </mat-sidenav>
