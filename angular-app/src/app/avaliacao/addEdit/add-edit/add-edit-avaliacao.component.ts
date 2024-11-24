@@ -5,6 +5,10 @@ import { ArtigoService } from 'src/app/artigo/artigo.service';
 import { Action } from '../../listarAva/listar-avaliacao.component';
 import { StatusArtigo } from 'src/app/artigo/artigo.model';
 
+interface Situacoes {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-add-edit-avaliacao',
   templateUrl: './add-edit-avaliacao.component.html',
@@ -14,6 +18,12 @@ export class AddEditAvaliacaoComponent implements OnInit {
   form1!: FormGroup;
   form2!: FormGroup;
   private action!: Action;
+
+  situacoes: Situacoes[] = [
+    { value: 'EM_ANALISE', viewValue: 'Em análise' },
+    { value: 'APROVADO', viewValue: 'Aprovado' },
+    { value: 'REPROVADO', viewValue: 'Reprovado' },
+  ];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,7 +44,7 @@ export class AddEditAvaliacaoComponent implements OnInit {
 
     this.form2 = this.formBuilder.group({
       resumo_artigo: ['', [Validators.required]],
-      status: [StatusArtigo.EM_ANALISE],
+      status: [''],
     });
   }
 

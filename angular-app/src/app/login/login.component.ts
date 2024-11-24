@@ -30,11 +30,9 @@ export class LoginComponent {
       this.formData.tipoCadastro &&
       this.emailValido()
     ) {
-      console.log('Formulário válido:', this.formData);
       this.router.navigate(['/inicial']);
     } else {
       alert('Preencha todos os campos corretamente!');
-      console.log('Formulário inválido:', this.formData);
     }
   }
 }
