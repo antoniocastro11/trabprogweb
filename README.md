@@ -14,11 +14,6 @@ Maria Eduarda Moretto de Lima:
 - [Linkedin](https://www.linkedin.com/in/eduardamorett0/)
 - [Github](https://github.com/M0rett0)
 
-Nicolas Miranda Bento:
-
-- [Linkedin]()
-- [Github](https://github.com/NicolasMirB)
-
 João Pedro da Cruz:
 
 - [Linkedin](https://www.linkedin.com/in/joaopedrocruz10/)
@@ -42,4 +37,4 @@ As técnologias utilizadas foram:
 
 - [Documento de Requisitos](https://docs.google.com/document/d/12opJNaTAXk7Af83H-sdsWfqw2tbaFyhN/edit?usp=sharing&ouid=109493456912774970127&rtpof=true&sd=true)
 
-- [Apresentação Final]()
+- [Apresentação Final](https://www.canva.com/design/DAGXby751d8/b-i1Tac5rn86POnbeeicJQ/edit?utm_content=DAGXby751d8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
