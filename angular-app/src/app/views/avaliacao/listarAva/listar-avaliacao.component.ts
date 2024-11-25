@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Artigo, StatusArtigo } from 'src/app/artigo/artigo.model';
-import { ArtigoService } from 'src/app/artigo/artigo.service';
+import { Artigo, StatusArtigo } from 'src/app/models/artigo.model';
+import { ArtigoService } from 'src/app/services/artigo.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import {
   validateApprovedOrAnalysisStatus,
   validateRepprovedStatus,
-} from 'src/app/common/utils/validateStatus';
+} from 'src/app/core/utils/validateStatus';
 
 export enum Action {
   ADD = 'ADD',

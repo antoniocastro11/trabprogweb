@@ -1,4 +1,4 @@
-import { StatusArtigo } from 'src/app/artigo/artigo.model';
+import { StatusArtigo } from 'src/app/models/artigo.model';
 
 export const validateApprovedOrAnalysisStatus = (status: StatusArtigo) => {
   return status === StatusArtigo.APROVADO || status === StatusArtigo.EM_ANALISE;

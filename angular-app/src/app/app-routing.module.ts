@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { InicialComponent } from './inicial/inicial.component';
+import { LoginComponent } from './views/login/login.component';
+import { InicialComponent } from './views/inicial/inicial.component';
 
 const routes: Routes = [
   {
@@ -9,18 +9,18 @@ const routes: Routes = [
   },
   {
     path: "artigo",
-    loadChildren: () => import('./artigo/art-crud/art-listar.module').then(modulo => modulo.ArtListarModule),
+    loadChildren: () => import('./views/artigo/art-crud/art-listar.module').then(modulo => modulo.ArtListarModule),
   },
   {
     path: "avaliacao",
-    loadChildren: () => import('./avaliacao/listar-avaliacao.module').then(modulo => modulo.ListarAvaliacaoModule)
+    loadChildren: () => import('./views/avaliacao/listar-avaliacao.module').then(modulo => modulo.ListarAvaliacaoModule)
   },
   {
     path: "login", 
     component: LoginComponent
   },
   {
-    path:"inicial", loadChildren: () => import('./inicial/inicial.module').then(modulo => modulo.InicialModule)
+    path:"inicial", loadChildren: () => import('./views/inicial/inicial.module').then(modulo => modulo.InicialModule)
   }
 ];
 

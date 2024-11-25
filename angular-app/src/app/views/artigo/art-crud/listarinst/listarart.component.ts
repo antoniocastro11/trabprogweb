@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtigoService } from '../../artigo.service';
-import { Artigo, StatusArtigo } from '../../artigo.model';
+import { ArtigoService } from '../../../../services/artigo.service';
+import { Artigo, StatusArtigo } from '../../../../models/artigo.model';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 

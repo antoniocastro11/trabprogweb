@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ArtigoService } from 'src/app/artigo/artigo.service';
+import { ArtigoService } from 'src/app/services/artigo.service';
 import { Action } from '../../listarAva/listar-avaliacao.component';
-import { StatusArtigo } from 'src/app/artigo/artigo.model';
+import { StatusArtigo } from 'src/app/models/artigo.model';
 
 interface Situacoes {
   value: string;
