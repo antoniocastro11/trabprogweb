@@ -1,7 +1,7 @@
 #tipo-cadastro {
     width: 100%;
     padding: 10px;
-    font-size: 14px;
+    font-size: 18px;
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -36,12 +36,9 @@
 .login h1 {
     color: black;
     font-family: "Lalezar", system-ui;
-    font-style: normal;
+    font-size: 50px;
     text-align: center;
-    font-size: 45px;
-    margin-top: 20px;
-    text-align: center;
-    margin: auto;
+    margin: 20px;
     font-weight: bold;
 }
 
@@ -61,7 +58,7 @@ form {
 
 input {
     padding: 10px;
-    font-size: 14px;
+    font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -75,7 +72,7 @@ a {
 
 button {
     padding: 10px;
-    font-size: 14px;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     background-color: #603D9C;
@@ -93,13 +90,16 @@ button:hover {
     border: 1px solid #6C63FF;
 }
 
+p {
+    font-size: 18px;
+}
+
 .register:hover {
     background-color: #f2f2f2;
 }
 
 .divider {
     text-align: center;
-    font-size: 12px;
-    color: rgb(56, 56, 56);
-    margin: 10px 0;
+    font-size: 17px;
+    margin-bottom: 15px
 }
