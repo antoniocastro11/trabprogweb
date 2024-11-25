@@ -89,17 +89,28 @@
 
             <mat-form-field>
               <mat-label>Situação do Artigo</mat-label>
-              <mat-select>
+              <mat-select formControlName="status">
                 <mat-option
                   *ngFor="let situacao of situacoes"
                   [value]="situacao.value"
-                  formcontrolname="status"
                 >
                   {{ situacao.viewValue }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
 
+            <mat-form-field class="mt-2">
+              <mat-label>Comentário da avaliação</mat-label>
+              <textarea
+                matInput
+                placeholder="ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+                formControlName="resumo_artigo"
+                required
+                cols="55"
+                line="25"
+              >
+              </textarea>
+            </mat-form-field>
             <div>
               <button mat-button matStepperPrevious>Anterior</button>
               <button mat-button (click)="submit()">Finalizar</button>

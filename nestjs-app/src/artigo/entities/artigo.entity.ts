@@ -49,4 +49,7 @@ export class Artigo extends Model<Artigo> implements ArtigoInterface {
     ],
   })
   status: StatusArtigo;
+
+  @Column({ type: DataTypes.TEXT('long') })
+  comentario_avaliacao: string;
 }

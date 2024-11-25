@@ -55,4 +55,10 @@ export class CreateArtigoDto implements Omit<ArtigoInterface, 'id'> {
     example: StatusArtigo.EM_ANALISE,
   })
   status: StatusArtigo;
+
+  @ApiProperty({
+    description: 'Comentário do avaliador.',
+    example: 'Argumentos bem construidos, sintaxe correta, tema relevante.',
+  })
+  comentario_avaliacao: string;
 }

@@ -18,10 +18,12 @@ export interface ArtigoInterface {
   idioma: string;
 
   status: StatusArtigo;
+
+  comentario_avaliacao: string;
 }
 
-export enum StatusArtigo{
+export enum StatusArtigo {
   EM_ANALISE = 'Em análise',
   APROVADO = 'Aprovado',
-  REPROVADO = 'Reprovado'
+  REPROVADO = 'Reprovado',
 }

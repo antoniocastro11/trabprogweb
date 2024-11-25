@@ -45,6 +45,7 @@ export class AddEditAvaliacaoComponent implements OnInit {
     this.form2 = this.formBuilder.group({
       resumo_artigo: ['', [Validators.required]],
       status: [''],
+      comentario_avaliacao: [''],
     });
   }
 
@@ -81,10 +82,11 @@ export class AddEditAvaliacaoComponent implements OnInit {
 
   update() {
     const data = { ...this.form1.value, ...this.form2.value };
-
+    console.log(data);
     if (!data.id) return;
     this.artService.update(data.id, data).subscribe((_) => {
       this.back();
+      console.log(data);
     });
   }
 
