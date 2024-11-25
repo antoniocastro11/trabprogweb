@@ -8,7 +8,8 @@
   </div>
 
   <mat-form-field [appearance]="'outline'">
-    <mat-label>Filtro</mat-label>
+    <mat-label class="text">Filtro</mat-label>
+    <mat-icon matPrefix class="button">filter_list</mat-icon>
     <input
       matInput
       (keyup)="applyFilter($event)"
