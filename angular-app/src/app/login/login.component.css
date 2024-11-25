@@ -44,7 +44,7 @@
 
 .login p {
     color: black;
-    font-size: 14px;
+    font-size: 18px;
     margin: 10px 0 20px;
 }
 
@@ -88,10 +88,6 @@ button:hover {
     background-color: #fff;
     color: #6C63FF;
     border: 1px solid #6C63FF;
-}
-
-p {
-    font-size: 18px;
 }
 
 .register:hover {
