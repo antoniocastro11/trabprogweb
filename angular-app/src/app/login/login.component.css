@@ -14,11 +14,23 @@
     margin-top: 10px;
 }
 
+.layout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    background-color: #c5abf1 ;
+    
+}
+
 .login {
-    margin-left: 70%;
-    padding: 5%;
+    padding: 60px;
+    width: 400px;
     align-items: center;
-    width: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 86,5%;
+    background-color: #fff;
 }
 
 .login h1 {

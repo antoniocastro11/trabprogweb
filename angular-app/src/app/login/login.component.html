@@ -1,39 +1,41 @@
-<div class="login">
-  <img
-    mat-card-image
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo9rJzQCqUKCvZ31Xc_MAYCXR2zCsj0hJwtj2GdM3rW3GZZ1TV"
-    alt="Pilha de livros"
-  />
-  <h1>BOOK.COM</h1>
-  <p>Faça login em sua conta</p>
-  <form (ngSubmit)="onSubmit()">
-    <input
-      type="email"
-      [(ngModel)]="formData.email"
-      name="email"
-      placeholder="Email"
-      required
+<div class="layout">
+  <div class="login">
+    <img
+      mat-card-image
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo9rJzQCqUKCvZ31Xc_MAYCXR2zCsj0hJwtj2GdM3rW3GZZ1TV"
+      alt="Pilha de livros"
     />
-    <input
-      type="password"
-      [(ngModel)]="formData.senha"
-      name="senha"
-      placeholder="Senha"
-      required
-    />
-    <select
-      [(ngModel)]="formData.tipoCadastro"
-      name="tipoCadastro"
-      id="tipo-cadastro"
-      required
-    >
-      <option value="" disabled selected>Tipo de Usuário</option>
-      <option value="Estudante">Estudante</option>
-      <option value="Professor">Professor (Orientador)</option>
-    </select>
-    <button type="submit">Entrar</button>
-    <a href="#">Esqueceu a senha?</a>
-    <div class="divider">ou</div>
-    <button class="register">Cadastre-se</button>
-  </form>
+    <h1>BOOK.COM</h1>
+    <p>Faça login em sua conta</p>
+    <form (ngSubmit)="onSubmit()">
+      <input
+        type="email"
+        [(ngModel)]="formData.email"
+        name="email"
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        [(ngModel)]="formData.senha"
+        name="senha"
+        placeholder="Senha"
+        required
+      />
+      <select
+        [(ngModel)]="formData.tipoCadastro"
+        name="tipoCadastro"
+        id="tipo-cadastro"
+        required
+      >
+        <option value="" disabled selected>Tipo de Usuário</option>
+        <option value="Estudante">Estudante</option>
+        <option value="Professor">Professor (Orientador)</option>
+      </select>
+      <button type="submit">Entrar</button>
+      <a href="#">Esqueceu a senha?</a>
+      <div class="divider">ou</div>
+      <button class="register">Cadastre-se</button>
+    </form>
+  </div>
 </div>
