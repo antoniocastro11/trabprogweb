@@ -29,6 +29,7 @@ export class ListarAvaliacaoComponent implements OnInit {
     'titulo_artigo',
     'nome_autor',
     'data_publicacao',
+    'status',
     'açoes',
   ];
 
@@ -102,7 +103,7 @@ export class ListarAvaliacaoComponent implements OnInit {
   }
 
   activate(art: Artigo) {
-    art.status = StatusArtigo.APROVADO;
+    art.status = StatusArtigo.EM_ANALISE;
     this.artigoService.activate(art.id).subscribe();
   }
 }

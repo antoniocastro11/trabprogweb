@@ -54,6 +54,17 @@
       </td>
     </ng-container>
 
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Situação</th>
+      <td
+        class="Status"
+        [ngClass]="validateRepproved(element.status) ? 'disabled' : ''"
+        *matCellDef="let element"
+      >
+        {{ element.status }}
+      </td>
+    </ng-container>
+
     <!-- acoes -->
     <ng-container matColumnDef="açoes">
       <th mat-header-cell *matHeaderCellDef>Ações</th>

@@ -44,7 +44,7 @@ export class AddEditAvaliacaoComponent implements OnInit {
 
     this.form2 = this.formBuilder.group({
       resumo_artigo: ['', [Validators.required]],
-      status: [''],
+      status: ['', [Validators.required]],
       comentario_avaliacao: [''],
     });
   }

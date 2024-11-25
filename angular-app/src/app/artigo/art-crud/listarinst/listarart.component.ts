@@ -74,22 +74,4 @@ export class ListarartComponent implements OnInit {
       },
     });
   }
-  navigateToEdit(id?: number) {
-    this.router.navigate(['artigo/add'], {
-      queryParams: {
-        id: id,
-        action: Action.EDIT,
-      },
-    });
-  }
-
-  deactivate(art: Artigo) {
-    art.status = StatusArtigo.REPROVADO;
-    this.artigoService.deactivate(art.id).subscribe();
-  }
-
-  activate(art: Artigo) {
-    art.status = StatusArtigo.APROVADO;
-    this.artigoService.activate(art.id).subscribe();
-  }
 }
