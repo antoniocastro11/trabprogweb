@@ -1,5 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ArtigoInterface, StatusArtigo } from '../interfaces/artigo.interface';
+import {
+  ArtigoInterface,
+  StatusArtigo,
+} from '../../../modules/artigo/interfaces/artigo.interface';
 
 export class CreateArtigoDto implements Omit<ArtigoInterface, 'id'> {
   @ApiProperty({

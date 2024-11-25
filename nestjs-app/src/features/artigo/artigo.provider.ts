@@ -1,4 +1,4 @@
-import { Artigo } from './entities/artigo.entity';
+import { Artigo } from '../../modules/artigo/entities/artigo.entity';
 
 export const artigoProviders = [
   {

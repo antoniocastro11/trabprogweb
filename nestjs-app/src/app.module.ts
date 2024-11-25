@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { ArtigoModule } from './artigo/artigo.module';
+import { ArtigoModule } from './features/artigo/artigo.module';
 
 @Module({
   imports: [ArtigoModule],
@@ -8,4 +8,3 @@ import { ArtigoModule } from './artigo/artigo.module';
   providers: [],
 })
 export class AppModule {}
-

@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { CreateArtigoDto } from './dto/create-artigo.dto';
 import { UpdateArtigoDto } from './dto/update-artigo.dto';
-import { Artigo } from './entities/artigo.entity';
-import { StatusArtigo } from './interfaces/artigo.interface';
+import { Artigo } from '../../modules/artigo/entities/artigo.entity';
+import { StatusArtigo } from '../../modules/artigo/interfaces/artigo.interface';
 
 @Injectable()
 export class ArtigoService {
