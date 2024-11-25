@@ -20,9 +20,9 @@ export class AddEditAvaliacaoComponent implements OnInit {
   private action!: Action;
 
   situacoes: Situacoes[] = [
-    { value: 'EM_ANALISE', viewValue: 'Em análise' },
-    { value: 'APROVADO', viewValue: 'Aprovado' },
-    { value: 'REPROVADO', viewValue: 'Reprovado' },
+    { value: 'Em análise', viewValue: 'Em análise' },
+    { value: 'Aprovado', viewValue: 'Aprovado' },
+    { value: 'Reprovado', viewValue: 'Reprovado' },
   ];
 
   constructor(
